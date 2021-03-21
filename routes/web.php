@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\whitelist::class,'index'])->name('whitelist');
+Route::get('/whitelist_add', [\App\Http\Controllers\whitelist::class,'whitelist_add'])->name('whitelist_add');
+Route::get('/whitelist_edit', [\App\Http\Controllers\whitelist::class,'whitelist_edit'])->name('whitelist_edit');
